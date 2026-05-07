@@ -61,8 +61,7 @@ body.academic-home {
   letter-spacing: 0;
 }
 
-.academic-profile h1 span,
-.academic-overview h2 span {
+.academic-profile h1 span {
   color: #607080;
   font-weight: 600;
 }
@@ -196,24 +195,6 @@ body.academic-home {
   font-size: 1.55rem;
   line-height: 1.25;
   letter-spacing: 0;
-}
-
-.academic-overview {
-  padding-top: 4px;
-}
-
-.academic-overview h2 {
-  margin-bottom: 22px;
-  font-size: 2.75rem;
-}
-
-.academic-eyebrow {
-  margin: 0 0 8px;
-  color: #0b5f84;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .academic-overview p,
@@ -370,10 +351,6 @@ body.academic-home {
     margin-bottom: 28px;
     gap: 16px;
     overflow-x: auto;
-  }
-
-  .academic-overview h2 {
-    font-size: 2.18rem;
   }
 
   .academic-timeline article {
