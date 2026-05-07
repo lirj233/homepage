@@ -1,0 +1,123 @@
+---
+---
+
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+
+  <body class="academic-home">
+    <div class="academic-shell">
+      <aside class="academic-profile" aria-label="Profile">
+        <div class="academic-profile__inner">
+          {% if site.author.avatar %}
+            <img class="academic-profile__photo" src="{{ base_path }}/images/{{ site.author.avatar }}" alt="{{ site.author.name }}">
+          {% endif %}
+
+          <h1>{{ site.author.name }} <span>李仁杰</span></h1>
+          <p class="academic-profile__role">PhD Student</p>
+          <p class="academic-profile__affiliation">
+            <a href="http://www.cs.zju.edu.cn/">College of Computer Science and Technology</a><br>
+            Zhejiang University
+          </p>
+
+          <ul class="academic-profile__meta">
+            <li><i class="fas fa-location-dot" aria-hidden="true"></i> Hangzhou, China</li>
+            <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+          </ul>
+
+          <div class="academic-profile__interests" aria-label="Research interests">
+            <span>AIoT Systems</span>
+            <span>Security</span>
+            <span>Confidential Computing</span>
+            <span>Secure DNN Inference</span>
+            <span>Edge GPUs</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="academic-main" id="main">
+        <nav class="academic-nav" aria-label="Section navigation">
+          <a href="#overview">Overview</a>
+          <a href="#news">News</a>
+          <a href="#publications">Publications</a>
+          <a href="#education">Education</a>
+        </nav>
+
+        <section id="overview" class="academic-section academic-overview">
+          <p class="academic-eyebrow">Academic Homepage</p>
+          <h2>Renjie Li <span>李仁杰</span></h2>
+          {{ content }}
+        </section>
+
+        <section id="news" class="academic-section">
+          <h2>News</h2>
+          <div class="academic-news">
+            <p><time>2026</time> RTInfer is accepted to ICML 2026.</p>
+            <p><time>2026</time> Edge-cloud collaborative stream computing work is accepted to IEEE ICDCS 2026.</p>
+            <p><time>2026</time> SemanticNN is accepted to AAAI 2026.</p>
+            <p><time>2025</time> LoRa over BLE appears at ACM MobiCom 2025.</p>
+          </div>
+        </section>
+
+        <section id="publications" class="academic-section">
+          <div class="academic-section__head">
+            <h2>Publications</h2>
+            <p>* Publications are listed by year.</p>
+          </div>
+
+          <div class="academic-publications">
+            {% assign pubs = site.publications | sort: "date" | reverse %}
+            {% for post in pubs %}
+              <article class="academic-publication">
+                <div class="academic-publication__venue">{{ post.venue }} {{ post.date | date: "%Y" }}</div>
+                <h3>{{ post.title }}</h3>
+                {% if post.authors %}
+                  <p class="academic-publication__authors">{{ post.authors | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+                {% endif %}
+                {% if post.excerpt %}
+                  <p class="academic-publication__summary">{{ post.excerpt }}</p>
+                {% endif %}
+                {% if post.paperurl or post.codeurl or post.slidesurl %}
+                  <div class="academic-publication__links">
+                    {% if post.paperurl %}<a href="{{ post.paperurl }}">PDF</a>{% endif %}
+                    {% if post.codeurl %}<a href="{{ post.codeurl }}">Code</a>{% endif %}
+                    {% if post.slidesurl %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
+                  </div>
+                {% endif %}
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section id="education" class="academic-section">
+          <h2>Education</h2>
+          <div class="academic-timeline">
+            <article>
+              <time>2024 - Present</time>
+              <div>
+                <h3>PhD Student, Computer Science and Technology</h3>
+                <p>Zhejiang University. Co-advised by Prof. Wei Dong and Prof. Yi Gao. Expected 2029.</p>
+              </div>
+            </article>
+            <article>
+              <time>2020 - 2024</time>
+              <div>
+                <h3>B.E., Computer and Communication Engineering</h3>
+                <p>Northeastern University at Qinhuangdao. Advised by Prof. Xi Cai.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="academic-footer">
+          <p>&copy; {{ site.time | date: "%Y" }} Renjie Li. Last updated {{ "now" | date: "%Y-%m-%d" }}.</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

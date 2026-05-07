@@ -6,6 +6,7 @@ permalink: /publication/2025-lora-over-ble
 excerpt: "LoRa over BLE."
 date: 2025-12-02
 venue: "ACM MobiCom"
+authors: "Yeming Li, Hailong Lin, **Renjie Li**, Jiamei Lv, Yi Gao, and Wei Dong"
 citation: "Yeming Li, Hailong Lin, Renjie Li, Jiamei Lv, Yi Gao, Wei Dong. &quot;LoRa over BLE.&quot; <i>ACM MobiCom</i>, 2025."
 ---
 
