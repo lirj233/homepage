@@ -25,3 +25,4 @@ package-lock.json
 # Local source copy of the profile photo; the published copy is images/profile.jpg
 homepage-photo.jpg
 homepage-photo.jpeg
+!images/homepage-photo.jpg
