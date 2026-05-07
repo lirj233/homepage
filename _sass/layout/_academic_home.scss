@@ -46,9 +46,11 @@ body.academic-home {
 .academic-profile__photo {
   width: 156px;
   height: 156px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
   border-radius: 50%;
   border: 1px solid #d9dee4;
+  background: #eef1f3;
   box-shadow: 0 14px 30px rgba(31, 40, 51, 0.12);
 }
 
@@ -196,7 +198,7 @@ body.academic-home {
 
 .academic-news time {
   display: inline-block;
-  width: 58px;
+  width: 76px;
   color: #0b5f84;
   font-weight: 800;
 }
