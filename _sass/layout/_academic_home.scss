@@ -46,7 +46,7 @@ body.academic-home {
 .academic-profile__photo {
   width: 156px;
   height: 156px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
   border-radius: 50%;
   border: 1px solid #d9dee4;
@@ -95,11 +95,23 @@ body.academic-home {
   color: #7b8794;
 }
 
+.academic-profile__block {
+  margin-top: 26px;
+}
+
+.academic-profile__block h2 {
+  margin: 0 0 10px;
+  color: #1f2937;
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .academic-profile__interests {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 26px;
 }
 
 .academic-profile__interests span {
@@ -113,6 +125,33 @@ body.academic-home {
   color: #475569;
   font-size: 0.82rem;
   font-weight: 650;
+}
+
+.academic-profile__links {
+  display: grid;
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.academic-profile__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  color: #334155;
+  border-bottom: 0;
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.academic-profile__links a:hover {
+  color: #0b5f84;
+}
+
+.academic-profile__links i {
+  width: 20px;
+  color: #0b5f84;
+  text-align: center;
 }
 
 .academic-main {
