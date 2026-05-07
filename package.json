@@ -1,10 +1,10 @@
 {
-  "name": "academic-pages",
+  "name": "homepage",
   "version": "0.8.1.1",
   "description": "Academic Pages Mistakes Jekyll theme npm build scripts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/academicpages/academicpages.github.io"
+    "url": "https://github.com/lirj233/homepage"
   },
   "keywords": [
     "jekyll",
@@ -17,9 +17,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/academicpages/academicpages.github.io/issues"
+    "url": "https://github.com/lirj233/homepage/issues"
   },
-  "homepage": "https://github.com/academicpages/academicpages.github.io",
+  "homepage": "https://github.com/lirj233/homepage",
   "engines": {
     "node": ">= 0.10.0"
   },
