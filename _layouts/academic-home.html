@@ -102,9 +102,9 @@
               <article class="academic-publication academic-publication--{{ publication_type }}">
                 <div class="academic-publication__meta">
                   <span class="academic-publication__venue">{{ post.venue }} {{ post.date | date: "%Y" }}</span>
-                  {% if post.ccf %}<span class="academic-publication__rank{% if post.ccf == 'N/A' %} academic-publication__rank--muted{% endif %}">CCF {{ post.ccf }}</span>{% endif %}
-                  {% if post.th_cpl %}<span class="academic-publication__rank{% if post.th_cpl == 'N/A' %} academic-publication__rank--muted{% endif %}">TH-CPL {{ post.th_cpl }}</span>{% endif %}
-                  {% if post.core %}<span class="academic-publication__rank{% if post.core == 'N/A' %} academic-publication__rank--muted{% endif %}">CORE {{ post.core }}</span>{% endif %}
+                  {% if post.ccf and post.ccf != "N/A" %}<span class="academic-publication__rank">CCF {{ post.ccf }}</span>{% endif %}
+                  {% if post.th_cpl and post.th_cpl != "N/A" %}<span class="academic-publication__rank">TH-CPL {{ post.th_cpl }}</span>{% endif %}
+                  {% if post.core and post.core != "N/A" %}<span class="academic-publication__rank">CORE {{ post.core }}</span>{% endif %}
                 </div>
                 <h3>{{ post.title }}</h3>
                 {% if post.authors %}
