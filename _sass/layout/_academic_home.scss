@@ -7,9 +7,8 @@ body.academic-home {
   padding: 0;
   min-height: 100vh;
   color: #202733;
-  background:
-    radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.95), rgba(235, 239, 243, 0.7) 45%, transparent 70%),
-    linear-gradient(135deg, #f8fafc 0%, #edf1f4 48%, #e5ebef 100%);
+  background: #edf1f4;
+  background-image: radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.95), rgba(235, 239, 243, 0.7) 45%, transparent 70%), linear-gradient(135deg, #f8fafc 0%, #edf1f4 48%, #e5ebef 100%);
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.62;
@@ -41,14 +40,14 @@ body.academic-home {
 .academic-profile__inner {
   position: fixed;
   top: 5rem;
-  left: clamp(1rem, 2vw, 2rem);
+  left: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  width: clamp(270px, 18vw, 340px);
+  width: 300px;
   height: calc(100vh - 6rem);
-  padding: clamp(1.35rem, 2vw, 2rem);
+  padding: 1.6rem;
   overflow-y: auto;
   border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: 22px;
@@ -197,9 +196,9 @@ body.academic-home {
 
 .academic-main {
   min-width: 0;
-  max-width: calc(100vw - clamp(320px, 22vw, 410px));
-  margin-left: clamp(320px, 22vw, 410px);
-  padding: 5rem clamp(1.5rem, 2vw, 2.5rem) 2.4rem;
+  max-width: calc(100vw - 370px);
+  margin-left: 370px;
+  padding: 5rem 2.2rem 2.4rem;
 }
 
 .academic-nav {
@@ -211,7 +210,7 @@ body.academic-home {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: clamp(1rem, 2vw, 2rem);
+  gap: 1.8rem;
   min-height: 4rem;
   padding: 0 1rem;
   margin: 0;
@@ -473,6 +472,18 @@ body.academic-home {
 }
 
 @media (max-width: 1100px) {
+  .academic-profile__inner {
+    left: 1.2rem;
+    width: 280px;
+    padding: 1.35rem;
+  }
+
+  .academic-main {
+    max-width: calc(100vw - 322px);
+    margin-left: 322px;
+    padding-right: 1.2rem;
+  }
+
   .academic-publications {
     grid-template-columns: 1fr;
   }
