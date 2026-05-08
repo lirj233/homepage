@@ -78,12 +78,12 @@
         <section id="news" class="academic-section">
           <h2><i class="fas fa-bullhorn" aria-hidden="true"></i> News</h2>
           <div class="academic-card academic-news">
-            <p><time>2026.05</time> RTInfer is accepted to <strong>ICML</strong>.</p>
-            <p><time>2026.04</time> Elink is accepted by <strong>IEEE ICDCS</strong>.</p>
-            <p><time>2025.11</time> SemanticNN is accepted to <strong>AAAI</strong>.</p>
-            <p><time>2025.09</time> MoLink is accepted by <strong>EMNLP Findings</strong>.</p>
-            <p><time>2025.06</time> CPL is accepted by <strong>IEEE Transactions on Mobile Computing</strong>.</p>
-            <p><time>2024.12</time> BoRa is accepted by <strong>ACM MobiCom</strong>.</p>
+            <p><time>2026.05</time><span class="academic-news__icon" aria-hidden="true">🎉</span><span class="academic-news__text">RTInfer is accepted to <strong>ICML</strong>.</span></p>
+            <p><time>2026.04</time><span class="academic-news__icon" aria-hidden="true">🎉</span><span class="academic-news__text">Elink is accepted by <strong>IEEE ICDCS</strong>.</span></p>
+            <p><time>2025.11</time><span class="academic-news__icon" aria-hidden="true">🎉</span><span class="academic-news__text">SemanticNN is accepted to <strong>AAAI</strong>.</span></p>
+            <p><time>2025.09</time><span class="academic-news__icon" aria-hidden="true">🎉</span><span class="academic-news__text">MoLink is accepted by <strong>EMNLP Findings</strong>.</span></p>
+            <p><time>2025.06</time><span class="academic-news__icon" aria-hidden="true">🎉</span><span class="academic-news__text">CPL is accepted by <strong>IEEE Transactions on Mobile Computing</strong>.</span></p>
+            <p><time>2024.12</time><span class="academic-news__icon" aria-hidden="true">🎉</span><span class="academic-news__text">BoRa is accepted by <strong>ACM MobiCom</strong>.</span></p>
           </div>
         </section>
 
@@ -96,7 +96,9 @@
               <article class="academic-publication">
                 <div class="academic-publication__meta">
                   <span class="academic-publication__venue">{{ post.venue }} {{ post.date | date: "%Y" }}</span>
-                  <span class="academic-publication__rank">CCF A</span>
+                  {% unless post.venue == "IEEE ICDCS" or post.venue == "EMNLP Findings" %}
+                    <span class="academic-publication__rank">CCF A</span>
+                  {% endunless %}
                 </div>
                 <h3>{{ post.title }}</h3>
                 {% if post.authors %}
