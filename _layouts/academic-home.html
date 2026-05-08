@@ -92,7 +92,10 @@
             {% assign pubs = site.publications | sort: "date" | reverse %}
             {% for post in pubs %}
               <article class="academic-publication">
-                <div class="academic-publication__venue">{{ post.venue }} {{ post.date | date: "%Y" }}</div>
+                <div class="academic-publication__meta">
+                  <span class="academic-publication__venue">{{ post.venue }} {{ post.date | date: "%Y" }}</span>
+                  <span class="academic-publication__rank">CCF A</span>
+                </div>
                 <h3>{{ post.title }}</h3>
                 {% if post.authors %}
                   <p class="academic-publication__authors">{{ post.authors | markdownify | remove: "<p>" | remove: "</p>" }}</p>
