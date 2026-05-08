@@ -69,13 +69,15 @@
         </nav>
 
         <section id="overview" class="academic-section academic-overview">
-          <h2>Overview</h2>
-          {{ content }}
+          <h2><i class="fas fa-user" aria-hidden="true"></i> Overview</h2>
+          <div class="academic-card">
+            {{ content }}
+          </div>
         </section>
 
         <section id="news" class="academic-section">
-          <h2>News</h2>
-          <div class="academic-news">
+          <h2><i class="fas fa-bullhorn" aria-hidden="true"></i> News</h2>
+          <div class="academic-card academic-news">
             <p><time>2026.05</time> RTInfer is accepted to <strong>ICML</strong>.</p>
             <p><time>2026.04</time> Elink is accepted by <strong>IEEE ICDCS</strong>.</p>
             <p><time>2025.11</time> SemanticNN is accepted to <strong>AAAI</strong>.</p>
@@ -86,7 +88,7 @@
         </section>
 
         <section id="publications" class="academic-section">
-          <h2>Publications</h2>
+          <h2><i class="fas fa-file-lines" aria-hidden="true"></i> Publications</h2>
 
           <div class="academic-publications">
             {% assign pubs = site.publications | sort: "date" | reverse %}
@@ -105,7 +107,13 @@
                 {% endif %}
                 {% if post.paperurl or post.codeurl or post.slidesurl %}
                   <div class="academic-publication__links">
-                    {% if post.paperurl %}<a href="{{ post.paperurl }}">PDF</a>{% endif %}
+                    {% if post.paperurl %}
+                      {% assign paper_href = post.paperurl %}
+                      {% unless paper_href contains "://" %}
+                        {% assign paper_href = base_path | append: paper_href %}
+                      {% endunless %}
+                      <a href="{{ paper_href }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</a>
+                    {% endif %}
                     {% if post.codeurl %}<a href="{{ post.codeurl }}">Code</a>{% endif %}
                     {% if post.slidesurl %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
                   </div>
@@ -116,8 +124,8 @@
         </section>
 
         <section id="education" class="academic-section">
-          <h2>Education</h2>
-          <div class="academic-timeline">
+          <h2><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</h2>
+          <div class="academic-card academic-timeline">
             <article>
               <time>2024 - Present</time>
               <div>

@@ -7,6 +7,7 @@ excerpt: "Combating BLE weak links through PHY layer symbol extension and link l
 date: 2025-01-01
 venue: "IEEE Transactions on Mobile Computing"
 authors: "**Renjie Li**, Jiamei Lv, Hailong Lin, Yi Gao, and Wei Dong"
+paperurl: /files/combating-ble-weak-links-tmc.pdf
 citation: "Renjie Li, Jiamei Lv, Hailong Lin, Yi Gao, and Wei Dong. &quot;Combating BLE Weak Links by Combining PHY Layer Symbol Extension and Link Layer Coding.&quot; <i>IEEE Transactions on Mobile Computing</i>, 2025."
 ---
 

@@ -26,3 +26,6 @@ package-lock.json
 homepage-photo.jpg
 homepage-photo.jpeg
 !images/homepage-photo.jpg
+
+# Local source copies of publication PDFs; published copies live in files/
+_publications/*.pdf
