@@ -40,12 +40,12 @@ body.academic-home {
 .academic-profile__inner {
   position: fixed;
   top: 4.85rem;
-  left: 1.65rem;
+  left: 1.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  width: 288px;
+  width: 330px;
   height: calc(100vh - 6rem);
   padding: 1.35rem;
   overflow-y: auto;
@@ -80,13 +80,16 @@ body.academic-home {
 }
 
 .academic-profile h1 {
+  width: 100%;
   margin: 18px 0 6px;
-  font-size: 1.42rem;
+  font-size: 1.34rem;
   line-height: 1.15;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .academic-profile h1 span {
+  display: inline-block;
   color: #607080;
   font-weight: 600;
 }
@@ -98,9 +101,16 @@ body.academic-home {
 }
 
 .academic-profile__affiliation {
+  width: 100%;
   margin: 14px 0 0;
   color: #495565;
   font-size: 0.86rem;
+  overflow-wrap: anywhere;
+}
+
+.academic-profile__affiliation a,
+.academic-profile__meta a {
+  overflow-wrap: anywhere;
 }
 
 .academic-profile__meta {
@@ -112,6 +122,7 @@ body.academic-home {
   color: #44505f;
   font-size: 0.84rem;
   text-align: left;
+  width: 100%;
 }
 
 .academic-profile__meta i {
@@ -144,15 +155,20 @@ body.academic-home {
 .academic-profile__interests span {
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
   min-height: 30px;
   padding: 4px 10px;
   border: 1px solid rgba(191, 219, 254, 0.62);
   border-radius: 999px;
   background: rgba(239, 246, 255, 0.68);
   color: #1d4f75;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 650;
   backdrop-filter: blur(8px);
+  line-height: 1.25;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .academic-profile__links {
@@ -196,9 +212,9 @@ body.academic-home {
 
 .academic-main {
   min-width: 0;
-  max-width: calc(100vw - 342px);
-  margin-left: 342px;
-  padding: 5rem 1.7rem 2.4rem;
+  max-width: calc(100vw - 410px);
+  margin-left: 410px;
+  padding: 5rem 1.8rem 2.4rem;
 }
 
 .academic-nav {
@@ -478,16 +494,16 @@ body.academic-home {
   font-size: 0.78rem;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1280px) {
   .academic-profile__inner {
     left: 1rem;
-    width: 268px;
+    width: 300px;
     padding: 1.15rem;
   }
 
   .academic-main {
-    max-width: calc(100vw - 292px);
-    margin-left: 292px;
+    max-width: calc(100vw - 330px);
+    margin-left: 330px;
     padding-right: 1rem;
   }
 
@@ -496,7 +512,7 @@ body.academic-home {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1040px) {
   .academic-shell {
     display: block;
     padding: 0;
