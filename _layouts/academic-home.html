@@ -104,9 +104,6 @@
                 {% if post.authors %}
                   <p class="academic-publication__authors">{{ post.authors | markdownify | remove: "<p>" | remove: "</p>" }}</p>
                 {% endif %}
-                {% if post.excerpt %}
-                  <p class="academic-publication__summary">{{ post.excerpt }}</p>
-                {% endif %}
                 {% if post.paperurl or post.codeurl or post.slidesurl %}
                   <div class="academic-publication__links">
                     {% if post.paperurl %}
