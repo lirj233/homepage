@@ -45,9 +45,9 @@ body.academic-home {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  width: 330px;
+  width: 300px;
   height: calc(100vh - 6rem);
-  padding: 1.35rem;
+  padding: 1.2rem;
   overflow-y: auto;
   border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: 22px;
@@ -61,8 +61,7 @@ body.academic-home {
 }
 
 .academic-profile__inner:hover,
-.academic-card:hover,
-.academic-publication:hover {
+.academic-card:hover {
   transform: translateY(-7px);
   border-color: rgba(255, 255, 255, 0.72);
   box-shadow: 0 26px 58px rgba(31, 41, 55, 0.16);
@@ -212,9 +211,9 @@ body.academic-home {
 
 .academic-main {
   min-width: 0;
-  max-width: calc(100vw - 410px);
-  margin-left: 410px;
-  padding: 5rem 1.8rem 2.4rem;
+  max-width: calc(100vw - 350px);
+  margin-left: 350px;
+  padding: 5rem 1.4rem 2.4rem 0;
 }
 
 .academic-nav {
@@ -348,6 +347,19 @@ body.academic-home {
   font-size: 0.9rem;
 }
 
+.academic-publication-sources {
+  margin: -0.35rem 0 1rem;
+  color: #64748b;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.academic-publication-sources a {
+  color: #334155;
+  font-weight: 800;
+  border-bottom-color: rgba(100, 116, 139, 0.28);
+}
+
 .academic-publications {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -361,7 +373,7 @@ body.academic-home {
   min-height: 100%;
   padding: 1.2rem;
   border: 1px solid rgba(255, 255, 255, 0.44);
-  border-left: 4px solid #7cc7e8;
+  border-left: 4px solid transparent;
   border-radius: 16px;
   background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.32));
   box-shadow: 0 10px 28px rgba(31, 41, 55, 0.08);
@@ -369,6 +381,23 @@ body.academic-home {
   -webkit-backdrop-filter: blur(20px);
   transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
   will-change: transform;
+}
+
+.academic-publication:hover {
+  transform: translateY(-7px);
+  border-top-color: rgba(255, 255, 255, 0.72);
+  border-right-color: rgba(255, 255, 255, 0.72);
+  border-bottom-color: rgba(255, 255, 255, 0.72);
+  border-left-color: transparent;
+  box-shadow: 0 26px 58px rgba(31, 41, 55, 0.16);
+}
+
+.academic-publication--conference:hover {
+  border-left-color: #c2414d;
+}
+
+.academic-publication--journal:hover {
+  border-left-color: #1976a3;
 }
 
 .academic-publication__meta {
@@ -393,6 +422,18 @@ body.academic-home {
   text-transform: uppercase;
 }
 
+.academic-publication--conference .academic-publication__venue {
+  border-color: rgba(225, 106, 118, 0.55);
+  background: rgba(255, 232, 234, 0.92);
+  color: #96323d;
+}
+
+.academic-publication--journal .academic-publication__venue {
+  border-color: rgba(77, 166, 206, 0.58);
+  background: rgba(224, 244, 253, 0.92);
+  color: #0b638a;
+}
+
 .academic-publication__rank {
   display: inline-flex;
   align-items: center;
@@ -405,6 +446,24 @@ body.academic-home {
   font-size: 0.72rem;
   font-weight: 850;
   text-transform: uppercase;
+}
+
+.academic-publication--conference .academic-publication__rank {
+  border-color: rgba(225, 106, 118, 0.48);
+  background: rgba(255, 232, 234, 0.86);
+  color: #a63c48;
+}
+
+.academic-publication--journal .academic-publication__rank {
+  border-color: rgba(77, 166, 206, 0.5);
+  background: rgba(224, 244, 253, 0.86);
+  color: #0b638a;
+}
+
+.academic-publication .academic-publication__rank--muted {
+  border-color: rgba(203, 213, 225, 0.7);
+  background: rgba(248, 250, 252, 0.72);
+  color: #7b8794;
 }
 
 .academic-publication h3 {
@@ -495,20 +554,20 @@ body.academic-home {
 
 @media (max-width: 1280px) {
   .academic-profile__inner {
-    left: 1rem;
-    width: 300px;
-    padding: 1.15rem;
+    left: 0.85rem;
+    width: 270px;
+    padding: 1rem;
   }
 
   .academic-main {
-    max-width: calc(100vw - 330px);
-    margin-left: 330px;
-    padding-right: 1rem;
+    max-width: calc(100vw - 300px);
+    margin-left: 300px;
+    padding-right: 0.9rem;
   }
 
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1120px) {
   .academic-shell {
     display: block;
     padding: 0;

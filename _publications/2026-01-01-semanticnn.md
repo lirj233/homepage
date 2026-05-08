@@ -6,6 +6,10 @@ permalink: /publication/2026-semanticnn
 excerpt: "Compressive and error-resilient semantic offloading for extremely weak devices."
 date: 2026-01-01
 venue: "AAAI"
+publication_type: conference
+ccf: "A"
+th_cpl: "A"
+core: "A*"
 authors: "Jiaming Huang, Yi Gao, Fuchang Pan, **Renjie Li**, and Wei Dong"
 paperurl: /files/semanticnn-aaai26.pdf
 citation: "Jiaming Huang, Yi Gao, Fuchang Pan, Renjie Li, and Wei Dong. &quot;SemanticNN: Compressive and Error-Resilient Semantic Offloading for Extremely Weak Devices.&quot; Accepted to <i>AAAI</i>, 2026."

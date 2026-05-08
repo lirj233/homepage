@@ -89,16 +89,22 @@
 
         <section id="publications" class="academic-section">
           <h2><i class="fas fa-file-lines" aria-hidden="true"></i> Publications</h2>
+          <p class="academic-publication-sources">
+            <a href="https://www.ccf.org.cn/Academic_Evaluation/By_category/">[CCF]</a> China Computer Federation Ranking;
+            <a href="https://numbda.cs.tsinghua.edu.cn/~yuwj/TH-CPL.pdf">[TH-CPL]</a> Tsinghua-Computer Science Preferred List;
+            <a href="https://portal.core.edu.au/conf-ranks/">[CORE]</a> CORE Conference Ranking
+          </p>
 
           <div class="academic-publications">
             {% assign pubs = site.publications | sort: "date" | reverse %}
             {% for post in pubs %}
-              <article class="academic-publication">
+              {% assign publication_type = post.publication_type | default: "conference" %}
+              <article class="academic-publication academic-publication--{{ publication_type }}">
                 <div class="academic-publication__meta">
                   <span class="academic-publication__venue">{{ post.venue }} {{ post.date | date: "%Y" }}</span>
-                  {% unless post.venue == "IEEE ICDCS" or post.venue == "EMNLP Findings" %}
-                    <span class="academic-publication__rank">CCF A</span>
-                  {% endunless %}
+                  {% if post.ccf %}<span class="academic-publication__rank{% if post.ccf == 'N/A' %} academic-publication__rank--muted{% endif %}">CCF {{ post.ccf }}</span>{% endif %}
+                  {% if post.th_cpl %}<span class="academic-publication__rank{% if post.th_cpl == 'N/A' %} academic-publication__rank--muted{% endif %}">TH-CPL {{ post.th_cpl }}</span>{% endif %}
+                  {% if post.core %}<span class="academic-publication__rank{% if post.core == 'N/A' %} academic-publication__rank--muted{% endif %}">CORE {{ post.core }}</span>{% endif %}
                 </div>
                 <h3>{{ post.title }}</h3>
                 {% if post.authors %}
