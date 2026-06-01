@@ -4,8 +4,9 @@
 
 body.academic-home {
   --profile-left: 1.25rem;
-  --profile-width: 280px;
-  --profile-gap: 2rem;
+  --profile-width: 300px;
+  --profile-gap: 4.25rem;
+  --main-left-min: 420px;
   --main-right: 1.5rem;
   margin: 0;
   padding: 0;
@@ -216,7 +217,7 @@ body.academic-home {
 .academic-main {
   min-width: 0;
   max-width: none;
-  margin-left: calc(var(--profile-left) + var(--profile-width) + var(--profile-gap));
+  margin-left: max(var(--main-left-min), calc(var(--profile-left) + var(--profile-width) + var(--profile-gap)));
   padding: 5rem var(--main-right) 2.4rem 0;
 }
 
@@ -554,7 +555,8 @@ body.academic-home {
   body.academic-home {
     --profile-left: 0.8rem;
     --profile-width: 250px;
-    --profile-gap: 1.7rem;
+    --profile-gap: 3rem;
+    --main-left-min: 340px;
     --main-right: 1rem;
   }
 
