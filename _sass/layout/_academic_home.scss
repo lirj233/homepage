@@ -3,9 +3,9 @@
    ========================================================================== */
 
 body.academic-home {
-  --profile-left: clamp(1rem, 2vw, 2rem);
-  --profile-width: clamp(300px, 18vw, 360px);
-  --profile-gap: 8rem;
+  --shell-x: clamp(1.25rem, 2.4vw, 2.5rem);
+  --profile-column: clamp(300px, 18vw, 360px);
+  --layout-gap: clamp(6.5rem, 7vw, 10rem);
   --main-right: clamp(1rem, 2vw, 2rem);
   margin: 0;
   padding: 0;
@@ -31,25 +31,29 @@ body.academic-home {
 }
 
 .academic-shell {
-  display: block;
+  display: grid;
+  grid-template-columns: var(--profile-column) minmax(0, 1fr);
+  column-gap: var(--layout-gap);
+  align-items: start;
   width: 100%;
   min-height: 100vh;
-  padding: 0;
+  box-sizing: border-box;
+  padding: 5rem var(--main-right) 2.4rem var(--shell-x);
 }
 
 .academic-profile {
-  position: relative;
+  position: sticky;
+  top: 4.85rem;
+  min-width: 0;
 }
 
 .academic-profile__inner {
-  position: fixed;
-  top: 4.85rem;
-  left: var(--profile-left);
+  position: static;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  width: var(--profile-width);
+  width: 100%;
   height: calc(100vh - 6rem);
   padding: 1.2rem;
   overflow-y: auto;
@@ -213,11 +217,14 @@ body.academic-home {
   white-space: nowrap;
 }
 
-.academic-main {
+body.academic-home #main.academic-main {
+  justify-self: stretch;
+  width: 100%;
   min-width: 0;
   max-width: none;
-  margin-left: calc(var(--profile-left) + var(--profile-width) + var(--profile-gap));
-  padding: 5rem var(--main-right) 2.4rem 0;
+  margin: 0;
+  padding: 0;
+  animation: none;
 }
 
 .academic-nav {
@@ -366,7 +373,7 @@ body.academic-home {
 
 .academic-publications {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(430px, 100%), 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.2rem;
 }
 
@@ -552,8 +559,9 @@ body.academic-home {
 
 @media (max-width: 1280px) {
   body.academic-home {
-    --profile-width: 300px;
-    --profile-gap: 7rem;
+    --profile-column: 300px;
+    --layout-gap: clamp(5rem, 6vw, 7rem);
+    --shell-x: 1rem;
     --main-right: 1rem;
   }
 
@@ -563,10 +571,20 @@ body.academic-home {
 
 }
 
+@media (max-width: 1180px) {
+  .academic-publications {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1040px) {
   .academic-shell {
     display: block;
     padding: 0;
+  }
+
+  .academic-profile {
+    position: static;
   }
 
   .academic-profile__inner {
@@ -593,9 +611,10 @@ body.academic-home {
     padding: 22px 20px;
   }
 
-  .academic-main {
+  body.academic-home #main.academic-main {
+    width: auto;
     max-width: 100vw;
-    margin-left: 0;
+    margin: 0;
     padding: 0 1rem 2rem;
   }
 
